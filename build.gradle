@@ -1,0 +1,30 @@
+
+apply plugin: 'application'
+
+mainClassName   = 'jp.toastkid.menu_label.Main'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.jfoenix:jfoenix:1.0.0'
+    testCompile 'junit:junit:4.12'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+run {
+    classpath += configurations.runtime
+}
+
+//clear existing task actions and call ant task
+jar {
+    manifest {
+        attributes 'Main-Class' : mainClassName
+    }
+    destinationDir = projectDir
+    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+}
