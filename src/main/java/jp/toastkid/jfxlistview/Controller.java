@@ -1,4 +1,4 @@
-package jp.toastkid.menu_label;
+package jp.toastkid.jfxlistview;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -34,6 +34,14 @@ public class Controller implements Initializable {
     @FXML
     private void hello() {
         snackbar.fireEvent(new SnackbarEvent("Hello!"));
+    }
+
+    /**
+     * Saying Good bye.
+     */
+    @FXML
+    private void goodbye() {
+        snackbar.fireEvent(new SnackbarEvent("Good bye!"));
     }
 
     /**

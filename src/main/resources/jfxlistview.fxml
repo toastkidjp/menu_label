@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Tab?>
+
+<?import com.jfoenix.controls.JFXSnackbar?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXListView?>
+
+<?import jp.toastkid.menu_label.MenuLabel?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+    prefHeight="400.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="jp.toastkid.jfxlistview.Controller"
+    fx:id="root"
+    >
+   <children>
+    <JFXTabPane fx:id="menuTabs" layoutX="0.0" prefHeight="-1.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="App">
+          <content>
+            <JFXListView styleClass="left-tabs" VBox.vgrow="ALWAYS" >
+              <MenuLabel mnemonicParsing="true" accelerator="ESC" onAction="#close"
+                            prefHeight="39.0" prefWidth="175.0" text="Close" />
+            </JFXListView>
+          </content>
+        </Tab>
+        <Tab text="Greetings">
+          <content>
+            <JFXListView styleClass="left-tabs" VBox.vgrow="ALWAYS" >
+              <MenuLabel mnemonicParsing="true" accelerator="Ctrl+H" onAction="#hello"
+                            prefHeight="39.0" prefWidth="175.0" text="Hello" />
+              <MenuLabel mnemonicParsing="true" accelerator="Ctrl+G" onAction="#goodbye"
+                            prefHeight="39.0" prefWidth="175.0" text="Good bye" />
+            </JFXListView>
+          </content>
+        </Tab>
+      </tabs>
+    </JFXTabPane>
+    <JFXSnackbar fx:id="snackbar" prefWidth="300" />
+  </children>
+</VBox>
